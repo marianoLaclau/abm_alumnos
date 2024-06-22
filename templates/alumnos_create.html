@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+    
+{% block title %}Agregar Alumno{% endblock %}
+
+{% block content %}
+
+<a style="margin-left: 5%;" href="javascript:history.back()" class="btn btn-secondary">
+    <i class="bi bi-arrow-left"></i>
+</a>
+
+<div class="form-contenedor">
+    <h1 style="margin-left: 2%;">Añadir Alumno</h1>
+    <form method="post" class="form_alumno">
+        {% csrf_token %}
+        {{ form.as_p }}
+    
+        <button type="submit" class="btn btn-secondary btn-form btn-save">Guardar
+        </button>
+    </form>
+</div>
+
+<br><br><br>
+<center><a href="javascript:history.back()" class="btn btn-secondary">
+    <i class="bi bi-arrow-left"></i> Volver
+</a></center>
+
+{% endblock %}

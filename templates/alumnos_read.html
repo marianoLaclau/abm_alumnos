@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+    
+{% block title %}Ver Alumno{% endblock %}
+
+
+{% block content %}
+<a style="margin-left: 5%;" href="javascript:history.back()" class="btn btn-secondary">
+    <i class="bi bi-arrow-left"></i>
+</a>
+<div class="form-contenedor">
+    <h1>Ver Alumno</h1>
+    <form method="get" class="form_alumno form2">
+        <p>Nombre: <strong>{{ object.nombre }}</strong></p> 
+        <p>Apellido: <strong>{{ object.apellido }}</strong></p> 
+        <p>DNI: <strong>{{ object.dni }}</strong></p> 
+        <p>Tel: <strong>{{ object.tel }}</strong></p> 
+        <p>Email: <strong>{{ object.email }}</strong></p>
+        <p>Direccion: <strong>{{ object.direccion }}</strong></p>
+        <p>Matricula:
+            {% if object.matricula %}
+                <i class="bi bi-check-circle text-success"></i> <!-- Icono de tic verde -->
+            {% else %}
+                <i class="bi bi-x-circle text-danger"></i> <!-- Icono de cruz roja -->
+            {% endif %}
+        </p>
+        <p>Curso: <strong>{{ object.curso }}</strong></p>
+        <p>Estado: <strong>{{ object.estado }}</strong></p>
+        <p>Inasistencias: <strong>{{ object.inasistencias }}</strong></p>
+        <p>Pago al día:
+            {% if object.pago_al_dia %}
+                <i class="bi bi-check-circle text-success"></i> <!-- Icono de tic verde -->
+            {% else %}
+                <i class="bi bi-x-circle text-danger"></i> <!-- Icono de cruz roja -->
+            {% endif %}
+        </p>
+        <button type="button" class="btn btn-form btn-secondary btn-save" data-bs-toggle="modal" data-bs-target="#exampleModalexport2" >Exportar</button>
+    </form>
+</div>
+<br><br><br>
+<center><a href="javascript:history.back()" class="btn btn-secondary">
+    <i class="bi bi-arrow-left"></i> Volver
+</a></center>
+
+{% include 'modals/legajo_exportar.html'  %}
+
+{% endblock %}

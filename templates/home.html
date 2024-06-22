@@ -1,0 +1,81 @@
+
+{% extends "base.html" %}
+    
+{% block title %} ABM Alumnos {% endblock %}
+
+{% block content %}
+    
+
+{# Comprobar si hay mensajes de alerta antes de renderizar #}
+    
+{% if messages %}
+        <div class="alerta-mensaje">
+            <div class="alert-container">
+                {% for message in messages %}
+                    <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+                        {{ message }}
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+{% endif %}
+
+    
+<div class="botones">
+    <a href="{% url 'agregar' %}" class= "btnitem btn btn-secondary">+ Agregar</a>
+    
+    <button type="button" class="btn btnitem btn-secondary" data-bs-toggle="modal" data-bs-target="#exampleModalexport" >Exportar</button>
+    
+    <form class="form-inline my-2 my-lg-0" method="get">
+        <input class="form-control mr-sm-2" name="buscar" type="search" placeholder="Apellido" aria-label="Search">
+        <button class="btn btn-secondary my-2 my-sm-0" type="submit">Buscar</button>      
+    </form>
+
+    <button type="button" id="refreshButton" class="btn btn-secondary" style="margin-left: 1%;">
+        <i class="bi bi-arrow-clockwise"></i>
+    </button>
+
+</div>
+<br><br>
+<table>
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>DNI</th>
+            <th>Teléfono</th>
+            <th>Email</th>
+            <th>Curso</th>
+            <th>Estado</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for objeto in object_list %}
+            <tr>
+                <td>{{objeto.id}}</td>
+                <td>{{objeto.nombre}}</td>
+                <td>{{objeto.apellido}}</td>
+                <td>{{objeto.dni}}</td>
+                <td>{{objeto.tel}}</td>
+                <td>{{objeto.email}}</td>
+                <td>{{objeto.curso}}</td>
+                <td>{{objeto.estado}}</td>
+                <td><a href="{% url 'verAlumno' pk=objeto.id %}" class="btn btn-secondary btn-sm">Ver</a>
+                    <a style="margin: auto 5px;" href="{% url 'editar' pk=objeto.id %}" class="btn btn-secondary btn-sm">Edit</a>
+                    <button type="button" class="btn btn-sm btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal" data-id="{{ objeto.id }}">X</button>
+                </td>
+            </tr>
+        {% endfor %}
+        
+    </tbody>
+</table>
+    
+
+{% include 'modals/alumnos_delete.html' with  objeto=objeto %}
+{% include 'modals/alumnos_exportar.html'  %}
+
+    
+{% endblock %}

@@ -1,0 +1,141 @@
+
+body{
+    background-color: #f3f3f3;
+    position: relative;
+}
+
+
+
+.titulo {
+    width: 100%;
+    display: flex;
+    justify-content: start;
+    margin: 1% 0;
+    background-color: #3d5675;
+}
+
+#titulo-item {
+    width: fit-content;
+    margin: 2% 5%;
+    color: white;
+}
+
+
+
+.botones{
+    display: flex;
+    flex-direction: row;
+    width: 90%;
+    margin: 0 auto;
+    justify-content: start;
+}
+
+.btnitem{
+    margin-right: 2%;
+}
+
+.form-inline {
+    display: flex;
+    align-items: center;
+}
+
+
+
+table {
+    width: 98%;
+    border-collapse: separate; /* Permite que el borde redondeado se vea correctamente */
+    border-spacing: 0; /* Elimina el espacio entre celdas */
+    margin: auto; /* Margen específico alrededor de la tabla */
+    /* border: 1px solid gray;
+    border-radius: 25px; 
+    overflow: hidden; /* Asegura que el contenido de la tabla respete el borde redondeado */
+    margin-bottom: 2%;
+}
+
+th, td {
+    
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+    padding: 0.5%;
+}
+
+th {
+    background-color: #a3a6b6;
+    color: white;
+}
+
+
+
+.footer-base {
+    width: 100%;
+    position: relative; 
+    bottom: 0;
+    text-align: center;
+    color: rgb(182, 182, 182);
+    padding: 10px 0;
+    margin-top: 8%;
+    background-color: #3d5675;
+}
+
+.footer-base > h6{
+    font-size: small;
+}
+
+
+
+
+
+.form-contenedor{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.form-contenedor > h1 {
+    width: 100%;
+    text-align: center;
+    color: #3d5675;
+}
+
+.form_alumno{
+    display: flex;
+    align-items: start;
+    flex-direction: column;
+    margin: 2%;
+    border: 1px solid lightgray;
+    width: fit-content;
+    padding: 2%;
+    border-radius: 20px;
+}
+
+.form_alumno > p{
+    width: 100%;
+    font-size: large;
+}
+
+.form2{
+    width: 50%;
+}
+
+.form2 > p{
+    border-bottom: 1px solid lightgray;
+}
+
+
+.btn-form {
+    margin-left: 40%;
+}
+
+
+.alerta-mensaje{
+    position: fixed;
+    width: 30%;
+    right: 2%;
+    margin-right: 5%;
+}
+
+.btn-save{
+    background-color: #3d5675;
+    color: white;
+}
