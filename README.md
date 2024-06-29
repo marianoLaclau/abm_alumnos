@@ -1,4 +1,4 @@
-# Desarrollo de Software Orientado a la Gestión y Apoyo a las Decisiones
+# Parcial Final | Desarrollo de Software Orientado a la Gestión y Apoyo a las Decisiones
 
 ## Descripción del Proyecto
 
